@@ -46,7 +46,7 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 # Imagen decorativa en la parte superior
-st.image("https://i.imgur.com/0XjzXkY.png", width=800, caption="✨ ¡Analiza tus textos con estilo! ✨")
+st.image("https://i.imgur.com/0XjzXkY.png", caption="✨ ¡Analiza tus textos con estilo! ✨")
 
 # Título principal
 st.title("📝 Analizador de Texto con TextBlob 🕵️‍♀️")
