@@ -45,13 +45,13 @@ st.markdown("""
     </style>
 """, unsafe_allow_html=True)
 
-# Imagen decorativa en la parte superior
-st.image("https://i.imgur.com/0XjzXkY.png", caption="✨ ¡Analiza tus textos con estilo! ✨")
 
-# Título principal
+st.image("analisistexto.png", caption="✨ ¡Analiza tus textos con estilo! ✨")
+
+
 st.title("📝 Analizador de Texto con TextBlob 🕵️‍♀️")
 
-# Descripción
+
 st.markdown("""
 ¡Bienvenido! 🎈 Esta app analiza tu texto con un toque de diversión:
 
@@ -62,14 +62,14 @@ st.markdown("""
 ¡Todo esto con color, imágenes y emojis! 🎨✨
 """)
 
-# Barra lateral
+
 st.sidebar.title("🎛️ Opciones mágicas")
 modo = st.sidebar.radio(
     "¿Cómo quieres ingresar tu texto?",
     ["🖊️ Escribir texto", "📁 Subir archivo"]
 )
 
-# Funciones auxiliares
+
 def contar_palabras(texto):
     palabras = re.findall(r'\b\w+\b', texto.lower())
     return pd.Series(palabras).value_counts()
@@ -91,7 +91,7 @@ def procesar_texto(texto):
         "frases": frases
     }
 
-# Función para visualizaciones
+
 def crear_visualizaciones(resultados):
     col1, col2 = st.columns(2)
 
@@ -123,7 +123,7 @@ def crear_visualizaciones(resultados):
         st.markdown(f"&nbsp;&nbsp;&nbsp;&nbsp;**Traducción**: '{frase['traducido']}' (Sentimiento: {s:.2f})")
         st.markdown("---")
 
-# Modo de entrada
+
 if modo == "🖊️ Escribir texto":
     texto = st.text_area("Escribe tu texto aquí 🧠", height=200, placeholder="Había una vez una historia increíble...")
     if st.button("🔍 Analizar texto"):
@@ -147,7 +147,7 @@ elif modo == "📁 Subir archivo":
         except Exception as e:
             st.error(f"⚠️ Error: {e}")
 
-# Pie de página
+
 st.markdown("""
 ---
 <center>✨ Creado con ❤️ por Cami para hacer el análisis textual más colorido y entretenido 🚀</center>
